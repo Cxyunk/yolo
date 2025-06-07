@@ -22,7 +22,7 @@ __all__ = (
     "Concat",
     "RepConv",
     "Index",
-    "ConvAttentionBlock"
+    "ConvAttentionBlock",
 )
 
 
@@ -91,17 +91,14 @@ class Conv(nn.Module):
         """
         return self.act(self.conv(x))
 
+
 class ConvAttentionBlock(nn.Module):
     def __init__(self, c1, c2, kernel_size=3, stride=1, groups=1):
         super().__init__()
         # 卷积分支
         self.conv = Conv(c1, c2, kernel_size, stride)
         # 自注意力分支（简化版 Squeeze Attention）
-        self.attn = nn.Sequential(
-            nn.AdaptiveAvgPool2d(1),
-            nn.Conv2d(c1, c2, 1, 1, 0, bias=True),
-            nn.Sigmoid()
-        )
+        self.attn = nn.Sequential(nn.AdaptiveAvgPool2d(1), nn.Conv2d(c1, c2, 1, 1, 0, bias=True), nn.Sigmoid())
 
     def forward(self, x):
         conv_out = self.conv(x)
@@ -728,5 +725,3 @@ class Index(nn.Module):
             (torch.Tensor): Selected tensor.
         """
         return x[self.index]
-
-

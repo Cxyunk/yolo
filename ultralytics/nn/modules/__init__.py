@@ -66,6 +66,7 @@ from .conv import (
     Concat,
     Conv,
     Conv2,
+    ConvAttentionBlock,
     ConvTranspose,
     DWConv,
     DWConvTranspose2d,
@@ -75,7 +76,6 @@ from .conv import (
     LightConv,
     RepConv,
     SpatialAttention,
-    ConvAttentionBlock
 )
 from .head import (
     OBB,
@@ -102,7 +102,6 @@ from .transformer import (
     TransformerEncoderLayer,
     TransformerLayer,
 )
-
 
 __all__ = (
     "Conv",
@@ -181,5 +180,5 @@ __all__ = (
     "TorchVision",
     "Index",
     "A2C2f",
-    "ConvAttentionBlock"
+    "ConvAttentionBlock",
 )
