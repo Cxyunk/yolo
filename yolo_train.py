@@ -2,12 +2,12 @@ import warnings
 warnings.filterwarnings('ignore')
 from ultralytics import YOLO
 if __name__ == '__main__':
-  model = YOLO('ultralytics/cfg/models/11/yolo11s.yaml')#
-  model.load('yolo11n.pt')  #注释则不加载
+  model = YOLO('ultralytics/cfg/models/11/yolo11n.yaml')#
+  #model.load('yolo11n.pt')  #注释则不加载
   results = model.train(
     data='coco.yaml',  #数据集配置文件的路径
     epochs=200,  #训练轮次总数
-    batch=8,  #批量大小，即单次输入多少图片训练
+    batch=16,  #批量大小，即单次输入多少图片训练
     imgsz=640,  #训练图像尺寸
     workers=8,  #加载数据的工作线程数
     device= 0,  #指定训练的计算设备，无nvidia显卡则改为 'cpu'

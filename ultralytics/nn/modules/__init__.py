@@ -102,6 +102,16 @@ from .transformer import (
     TransformerEncoderLayer,
     TransformerLayer,
 )
+from .CATA import (
+    CATA_Attention,
+    ConvFFN,
+    PreNorm,
+    TAB,
+    LRSA,
+    IASA,
+    IRCA,
+    dwconv
+)
 
 
 __all__ = (
@@ -181,5 +191,13 @@ __all__ = (
     "TorchVision",
     "Index",
     "A2C2f",
-    "ConvAttentionBlock"
+    "ConvAttentionBlock",
+    "IRCA",
+    "IASA",
+    "dwconv",
+    "ConvFFN",
+    "PreNorm",
+    "TAB",
+    "CATA_Attention",
+    "LRSA"
 )

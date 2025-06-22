@@ -69,6 +69,14 @@ from ultralytics.nn.modules import (
     YOLOESegment,
     v10Detect,
     ConvAttentionBlock,
+    IRCA,
+    IASA,
+    dwconv,
+    ConvFFN,
+    PreNorm,
+    TAB,
+    CATA_Attention,
+    LRSA,
 )
 
 from ultralytics.utils import DEFAULT_CFG_DICT, DEFAULT_CFG_KEYS, LOGGER, YAML, colorstr, emojis
@@ -1401,6 +1409,14 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             SCDown,
             C2fCIB,
             A2C2f,
+            IRCA,
+            IASA,
+            dwconv,
+            ConvFFN,
+            PreNorm,
+            TAB,
+            CATA_Attention,
+            LRSA,
         }
     )
     repeat_modules = frozenset(  # modules with 'repeat' arguments
