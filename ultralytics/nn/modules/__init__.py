@@ -60,12 +60,14 @@ from .block import (
     SCDown,
     TorchVision,
 )
+from .CATA import IASA, IRCA, LRSA, TAB, CATA_Attention, ConvFFN, PreNorm, dwconv
 from .conv import (
     CBAM,
     ChannelAttention,
     Concat,
     Conv,
     Conv2,
+    ConvAttentionBlock,
     ConvTranspose,
     DWConv,
     DWConvTranspose2d,
@@ -75,7 +77,6 @@ from .conv import (
     LightConv,
     RepConv,
     SpatialAttention,
-    ConvAttentionBlock
 )
 from .head import (
     OBB,
@@ -102,17 +103,6 @@ from .transformer import (
     TransformerEncoderLayer,
     TransformerLayer,
 )
-from .CATA import (
-    CATA_Attention,
-    ConvFFN,
-    PreNorm,
-    TAB,
-    LRSA,
-    IASA,
-    IRCA,
-    dwconv
-)
-
 
 __all__ = (
     "Conv",
@@ -199,5 +189,5 @@ __all__ = (
     "PreNorm",
     "TAB",
     "CATA_Attention",
-    "LRSA"
+    "LRSA",
 )
